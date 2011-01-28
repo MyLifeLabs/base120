@@ -1,0 +1,4 @@
+description = "Pronounceable encoding of binary data"
+requires = ""
+archive(byte) = "englash.cma"
+archive(native) = "englash.cmxa"

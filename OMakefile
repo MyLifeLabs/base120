@@ -1,0 +1,20 @@
+USE_OCAMLFIND = true
+BYTE_ENABLED = true
+
+FILES[] =
+  base120
+
+OCAMLFLAGS = -g -dtypes
+OCAMLPACKS = 
+OCAMLFINDFLAGS = 
+OCAMLDEP_MODULES_ENABLED = false
+
+.DEFAULT: base120.cma base120.cmxa base120-demo
+
+.PHONY: clean
+
+clean:
+        rm -f *.o *.a *.cm* *~ *.annot *.opt *.run base120-demo
+
+OCamlLibrary(base120, $(FILES))
+OCamlProgram(base120-demo, $(FILES) demo)
